@@ -1,1 +1,2 @@
-season/* linguist-vendored
+* linguist-vendored
+*.r linguist-vendored=false
