@@ -704,18 +704,6 @@ theme_dark_ds <- function(base_size = 12, grid = "x"){
             strip.text = element_text(colour = "grey", face = "bold")
     ) 
   
-  # if(grid == "Y"){
-  #   theme + theme(panel.grid.major.y = element_blank())
-  # }
-  # if(grid == "X"){
-  #   theme + theme(panel.grid.major.x = element_blank())
-  # }
-  # if(grid == "y"){
-  #   theme + theme(panel.grid.minor.y = element_blank())
-  # }
-  # if(grid == "x"){
-  #   theme + theme(panel.grid.minor.x = element_blank())
-  # }
   # from hrbr themes
   if (inherits(grid, "character")) {
     if (regexpr("X", grid)[1] < 0) 
