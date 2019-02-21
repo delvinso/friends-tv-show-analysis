@@ -40,21 +40,25 @@ Please go through the script for more detail.
 Although not **all** issues were reported (because I only decided to write about this after putting in a day's work of wrangling), here are some of the major ones encountered.
 
 **Problem:** Using read_html() required many different variations of the initial parsing due to the different formats across  episodes (some required splitting on new lines, or carriage lines, retrieving text from certain nodes (<p></p> tags) and some required no formatting at all).
+
 **Solution:** htmlTreeParse allowed for formatting based on xpath, which simplified everything.
 
 **Problem:** (not *really* a problem, more like standard practice but..) formatting of lines
+
 **Solution:** trimming white space, unicode characters, trailing new lines, carriage returns, cast to lower case.
 
 **Problem:** Season 2 formatting deviated greatly from all other seasons.
 	1. Some episodes lack scenes, namely ep. 2 and 3.
 	2. Episodes 7, 8 and 10 have the main cast names abbreviated to 4 letters.
 	3. The lines are separated by <br> tags above the line, and on the line as opposed to <p></p> on the line.
+	
 **Solution:**
 	1. Not much can be done about the scenes except watching them myself (although the episode could have taken in one place).
 	2. Create a dataframe and replace abbreviated names with full names of cast members.
 	3. Use and if statement, if initial parsing fails resort to alternative method (guaranteed because only season 2 deviates from the standard <p></p> formatting.
 
 **Problem:** Season 9, episodes 11 and 15 were not read properly due to formatting.
+
 **Solution:**Went in and manually appended <p></p> to each line?
 
 To determine the number of 'scenes’, characters appeared in a scene variable was created which is a rolling count of the number of scene.  The lines between one scene and the one before it are also captured by this variable, allowing one to determine character appearances across scenes.
